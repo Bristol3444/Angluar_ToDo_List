@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Angular Lab Part 1</title>
+</head>
+
+<body>
+    <!-- ng-controller to link the controller function to the html as $ctrl -->
+    <section ng-controller="ToDoCtrl as $ctrl"> 
+        <!-- using ng-submit for the entire form to add new Task to array -->
+        <form ng-submit="$ctrl.add($ctrl.newTask)">
+            <p class="title">TODO List</p>
+            <p class="sub-header">A place to store things, you have to do!</p>
+            <!-- using the ng-model filterValue to link to ng-repeat | filter -->
+            <input type="text" placeholder="Filter your to-dos" ng-model="filterValue">
+
+            <ol>
+                <!-- ng repeat loops through the arrays and creates a job.task for each task object in the array. filter: filterValue allows users to search by keyword -->
+                <!-- button has predetermined class for "unfinished" tasks, or ng-if the object falsy values. ng-click, the button calls the function that makes the completed value = true. -->
+                <!-- if the x is clicked, the function splices that object from the array -->
+                <li ng-repeat="jobs in $ctrl.tasks | filter: filterValue">
+                    <div class="1">
+                    <span> {{$index + 1}}
+                    <button class="finish-job" ng-click="$ctrl.toggleClass($index)" ng-if="jobs.completed == false">Completed</button>
+                    <p ng-class="{complete : jobs.completed}">{{ jobs.task }}</p>
+                    </div>
+                    <a href="" ng-click="$ctrl.delete($index);">X</a>
+                    </span>
+                </li>
+            </ol>
+            <!-- input and button add new object to they array -->
+            <input ng-model="$ctrl.newTask.task"  type="text" placeholder="Add your to-do">
+            <button ng-disabled="!$ctrl.newTask.task" ng-click="$ctrl.self.add" class="add">Add</button>
+
+        </form>
+
+    </section>
+
+    <script src="https://code.angularjs.org/1.6.5/angular.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.controller.js"></script>
+</body>
+
+</html>
