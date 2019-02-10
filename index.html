@@ -26,7 +26,7 @@
                 <!-- if the x is clicked, the function splices that object from the array -->
                 <li ng-repeat="jobs in $ctrl.tasks | filter: filterValue">
                     <div class="1">
-                    <span> {{$index + 1}}
+                    <span> {{$index + 1}}.
                     <button class="finish-job" ng-click="$ctrl.toggleClass($index)" ng-if="jobs.completed == false">Completed</button>
                     <p ng-class="{complete : jobs.completed}">{{ jobs.task }}</p>
                     </div>

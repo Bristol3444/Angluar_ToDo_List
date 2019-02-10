@@ -1,74 +1,86 @@
+/* styling the body and gradient color */
 body {
     font-family: 'Open Sans', sans-serif;
     background: linear-gradient(to right, #f857a6, #ff5858);
 }
-section {
-    display: flex;
-    justify-content: center;
-}
-form {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 50%;
-    height: 80vh;
-}
-.title {
-    font-size: 2em;
-    font-weight: 400;
-    margin: 10px;
-}
-.sub-header {
-    margin: 10px;
-}
-ol {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    font-weight: 300;
-}
-li {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
-}
-.complete {
-    text-decoration: line-through;
-}
-.finish-job {
-    color:#ff69b4;
-    border: 1px solid #ff69b4;
-    border-radius: 15px;
-    background-color: white;
-    width: 75px;
-    height: 25px;
-    margin-left: 5px;
-    margin-right: 20px;
-}
-input {
-    display: flex;
-    width: 90%;
-    height: 5%;
-    margin: 10px;
-    border-radius: 5px;
-}
-.add {
-    width: 90%;
-    text-align: center;
-    color: white;
-    background-color: #ff1493;
-    border-radius: 5px;
-    margin: 10px;
-    height: 45px;
-    font-size: 1em;
-}
-span {
-    display: flex;
-    align-items: center;
-}
+    /* flexing the entire section */
+    section {
+        display: flex;
+        justify-content: center;
+    }
+        /* styling the form */
+        form {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            width: 50%;
+            height: 80vh;
+        }
+            /* title and sub title styling */
+            .title {
+                font-size: 2em;
+                font-weight: 400;
+                margin: 10px;
+            }
+            .sub-header {
+                margin: 10px;
+            }
+            /* styling the entire list */
+                    ol {
+                        display: flex;
+                        flex-direction: column;
+                        width: 90%;
+                        font-weight: 300;
+                    }
+                        /* styling the specific list items for spacing */
+                        li {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 95%;
+                        }
+                    /* ensuring that once an item is marked completed, the test has a line through it */
+                    .complete {
+                        text-decoration: line-through;
+                        margin-left: 15px;
+                    }
+                    /* styling for complete button */
+                .finish-job {
+                    color:#ff69b4;
+                    border: 1px solid #ff69b4;
+                    border-radius: 15px;
+                    background-color: white;
+                    width: 75px;
+                    height: 25px;
+                    margin-left: 5px;
+                    margin-right: 20px;
+                }
+                /* styling for all inputs */
+                input {
+                    display: flex;
+                    width: 90%;
+                    height: 5%;
+                    margin: 10px;
+                    border-radius: 5px;
+                }
+                /* styling for add button */
+                .add {
+                    width: 90%;
+                    text-align: center;
+                    color: white;
+                    background-color: #ff1493;
+                    border-radius: 5px;
+                    margin: 10px;
+                    height: 45px;
+                    font-size: 1em;
+                }
+    /* addition styling for positioning of anchors */
+    span {
+        display: flex;
+        align-items: center;
+    }
